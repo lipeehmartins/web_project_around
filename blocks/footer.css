@@ -1,0 +1,13 @@
+.footer {
+  max-width: 318px;
+  padding-bottom: 60px;
+  margin-left: 200px;
+}
+
+.footer__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: #545454;
+  margin: 0;
+}
