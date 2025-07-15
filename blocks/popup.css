@@ -12,12 +12,16 @@
   color: #000000;
 }
 
+.popup__opened {
+  display: flex;
+}
+
 .popup__edit-profile__container {
 }
 
 .popup__close-button {
   position: absolute;
-  top: 183px;
+  top: 169px;
   right: 376px;
   background-color: transparent;
   border: none;
