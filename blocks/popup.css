@@ -16,9 +16,6 @@
   display: flex;
 }
 
-.popup__edit-profile__container {
-}
-
 .popup__close-button {
   position: absolute;
   top: 169px;
