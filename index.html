@@ -138,6 +138,35 @@
         <footer class="footer">
           <p class="footer__text">&copy; 2025 Luiz Martins</p>
         </footer>
+        <section class="popup__edit-profile">
+          <div class="popup__edit-profile__container">
+            <button class="popup__close-button">
+              <img
+                src="./images/close_icon.svg"
+                alt="close_icon"
+                class="popup__close-icon"
+              />
+            </button>
+            <div class="popup__form-container">
+              <h2 class="popup__form-title">Editar perfil</h2>
+              <form class="popup__form">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nome"
+                  class="popup__input popup__input_type_name"
+                />
+                <input
+                  type="text"
+                  name="Sobre mim"
+                  placeholder="Sobre mim"
+                  class="popup__input popup__input_type_description"
+                />
+              </form>
+              <button type="submit" class="popup__save-button">Salvar</button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
     <script src="./scripts/script.js"></script>

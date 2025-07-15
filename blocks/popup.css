@@ -1,0 +1,74 @@
+.popup__edit-profile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: #000000;
+}
+
+.popup__edit-profile__container {
+}
+
+.popup__close-button {
+  position: absolute;
+  top: 183px;
+  right: 376px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: 40px;
+  min-height: 40px;
+}
+
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+
+.popup__form-container {
+  max-width: 430px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 34px 36px 36.51px 36px;
+}
+
+.popup__form-title {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0 0 54px 0;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 29.74px;
+  margin-bottom: 48px;
+}
+
+.popup__input {
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  width: 358px;
+  height: 27.255207061767578px;
+  padding: 13px;
+  opacity: 1;
+}
+
+.popup__save-button {
+  width: 100%;
+  padding: 18px 125px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup__save-button:hover {
+  opacity: 0.8;
+}
