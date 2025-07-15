@@ -78,3 +78,41 @@
 .profile__add-button:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 320px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 36px;
+  }
+
+  .profile__photo {
+    margin-bottom: 20px;
+  }
+
+  .profile__info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile__name {
+    font-size: 22px;
+    line-height: 100%;
+  }
+
+  .profile__name__edit-button {
+    width: 18px;
+    height: 18px;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  .profile__add-button {
+    width: 100%;
+    margin-top: 36px;
+    background-image: url("../images/Add_Button_mobil.svg");
+  }
+}

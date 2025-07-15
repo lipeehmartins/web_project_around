@@ -54,3 +54,19 @@
 .elements__like-button:hover {
   opacity: 0.5;
 }
+
+@media screen and (max-width: 800px) {
+  .elements {
+    grid-template-columns: repeat(2, 1fr);
+    width: 78%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .elements {
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto 50px;
+    grid-template-columns: 1fr;
+  }
+}
