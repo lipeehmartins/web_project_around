@@ -1,8 +1,8 @@
 let content = document.querySelector(".content");
-let editbtn = document.querySelector(".edit-btn");
-let closebtn = document.querySelector(".popup__close-button");
-let savebtn = document.querySelector(".popup__save-button");
-let form = document.querySelector(".popup__form");
+const editbtn = document.querySelector(".edit-btn");
+const closebtn = document.querySelector(".popup__close-button");
+const savebtn = document.querySelector(".popup__save-button");
+const form = document.querySelector(".popup__form");
 
 function togglePopup() {
   let popup = document.querySelector(".popup__edit-profile");
