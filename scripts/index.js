@@ -1,4 +1,4 @@
-let content = document.querySelector(".content");
+const content = document.querySelector(".content");
 const editbtn = document.querySelector(".edit-btn");
 const closebtn = document.querySelector(".popup__close-button");
 const savebtn = document.querySelector(".popup__save-button");
@@ -15,8 +15,8 @@ closebtn.addEventListener("click", togglePopup);
 
 function saveChanges(evt) {
   evt.preventDefault();
-  let nameInput = document.querySelector(".popup__input_name");
-  let sobreMimInput = document.querySelector(".popup__input_sobre_mim");
+  const nameInput = document.querySelector(".popup__input_name");
+  const sobreMimInput = document.querySelector(".popup__input_sobre_mim");
   let profileName = document.querySelector(".profile__name");
   let profileDescription = document.querySelector(".profile__description");
 
