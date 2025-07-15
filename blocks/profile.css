@@ -1,7 +1,7 @@
 .profile {
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   max-width: 880px;
 }
 
@@ -50,6 +50,10 @@
   cursor: pointer;
 }
 
+.profile__name__edit-button:hover {
+  opacity: 0.6;
+}
+
 .profile__description {
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -69,4 +73,8 @@
   height: 50px;
   cursor: pointer;
   margin-left: auto;
+}
+
+.profile__add-button:hover {
+  opacity: 0.6;
 }
