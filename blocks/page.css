@@ -1,3 +1,7 @@
+.body {
+  background-color: #000000;
+}
+
 .page {
   font-family: "Inter", sans-serif;
   margin: 0 auto;
