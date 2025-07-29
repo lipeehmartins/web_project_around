@@ -29,111 +29,10 @@
             </div>
             <p class="profile__description">Explorador</p>
           </div>
-          <button class="profile__add-button"></button>
+          <button class="profile__add-button post-btn"></button>
         </section>
         <section class="elements">
-          <div class="elements__item">
-            <img
-              src="./images/kirill-pershin-1088404-unsplash.jpg"
-              alt="Imagem do rio no Vale de Yosemite"
-              class="elements__image"
-            />
-            <div class="elements__info">
-              <h3 class="elements__title">Vale de Yosemite</h3>
-              <button class="elements__like-button">
-                <img
-                  src="../images/like_heart.svg"
-                  alt="like icon"
-                  class="elements__like-icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img
-              src="./images/kirill-pershin-1404681-unsplash (1).jpg"
-              alt="Imagem do Lago Louise"
-              class="elements__image"
-            />
-            <div class="elements__info">
-              <h3 class="elements__title">Lago Louise</h3>
-              <button class="elements__like-button">
-                <img
-                  src="../images/like_heart.svg"
-                  alt="like icon"
-                  class="elements__like-icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img
-              src="./images/kirill-pershin-1556355-unsplash.jpg"
-              alt="Imagem das Montanhas Carecas"
-              class="elements__image"
-            />
-            <div class="elements__info">
-              <h3 class="elements__title">Montanhas Carecas</h3>
-              <button class="elements__like-button">
-                <img
-                  src="../images/like_heart.svg"
-                  alt="like icon"
-                  class="elements__like-icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img
-              src="./images/kirill-pershin-1404681-unsplash.jpg"
-              alt="Imagem da montanha Latemar"
-              class="elements__image"
-            />
-            <div class="elements__info">
-              <h3 class="elements__title">Latemar</h3>
-              <button class="elements__like-button">
-                <img
-                  src="../images/like_heart.svg"
-                  alt="like icon"
-                  class="elements__like-icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img
-              src="./images/kirill-pershin-1556355-unsplash (1).jpg"
-              alt="Imagem do rio e montanhas do Parque Nacional do Iguaçu"
-              class="elements__image"
-            />
-            <div class="elements__info">
-              <h3 class="elements__title">Parque Nacional do Iguaçu</h3>
-              <button class="elements__like-button">
-                <img
-                  src="../images/like_heart.svg"
-                  alt="like icon"
-                  class="elements__like-icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img
-              src="./images/kirill-pershin-1088404-unsplash (1).jpg"
-              alt="Imagem do Lago e montanhas em di Braies"
-              class="elements__image"
-            />
-            <div class="elements__info">
-              <h3 class="elements__title">Lago di Braies</h3>
-              <button class="elements__like-button">
-                <img
-                  src="../images/like_heart.svg"
-                  alt="like icon"
-                  class="elements__like-icon"
-                />
-              </button>
-            </div>
-          </div>
+          <div class="elements__container"></div>
         </section>
         <footer class="footer">
           <p class="footer__text">&copy; 2025 Luiz Martins</p>
@@ -176,9 +75,9 @@
           </div>
         </section>
         <section class="popup">
-          <div class="popup__edit-NewPost">
+          <div class="popup__edit-newPost">
             <div class="popup__container">
-              <button class="popup__close-button">
+              <button class="popup__close-button closeNewPostbtn">
                 <img
                   src="./images/close_icon.svg"
                   alt="close icon"
@@ -187,7 +86,7 @@
               </button>
               <div class="popup__form-container">
                 <h2 class="popup__form-title">Novo Local</h2>
-                <form class="popup__form">
+                <form class="popup__form popup__form_new-post">
                   <input
                     type="text"
                     name="Local"
@@ -203,7 +102,10 @@
                     class="popup__input popup__input_link_imagem"
                     required
                   />
-                  <button type="submit" class="popup__save-button">
+                  <button
+                    type="submit"
+                    class="popup__save-button pop__save-post"
+                  >
                     Criar
                   </button>
                 </form>
@@ -213,6 +115,19 @@
         </section>
       </main>
     </div>
+
+    <template id="elements-template">
+      <div class="elements__item">
+        <div class="elements__delete">
+          <button class="elements__delete-button"></button>
+        </div>
+        <img src="" alt="" class="elements__image" />
+        <div class="elements__info">
+          <h3 class="elements__title"></h3>
+          <button class="elements__like-button"></button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

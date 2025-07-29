@@ -1,4 +1,4 @@
-.elements {
+.elements__container {
   max-width: 880px;
   margin: 0 auto 67px;
   display: grid;
@@ -14,6 +14,22 @@
   background-color: #ffffff;
   color: #000000;
   border-radius: 10px;
+  position: relative;
+}
+
+.elements__delete-button {
+  background-color: transparent;
+  background-image: url("../images/Trash.svg");
+  border: none;
+  cursor: pointer;
+  width: 18px;
+  height: 19.3px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  position: absolute;
+  top: 18px;
+  right: 15px;
 }
 
 .elements__image {
@@ -44,26 +60,37 @@
 
 .elements__like-button {
   margin-left: auto;
-  max-width: 21px;
-  max-height: 19px;
+  width: 21px;
+  height: 19px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  background-image: url("../images/like_heart.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-right: 21px;
+  padding-left: 0px;
 }
 
 .elements__like-button:hover {
   opacity: 0.5;
 }
 
+.elements__like-button_active {
+  background-image: url("../images/liked_heart.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 800px) {
-  .elements {
+  .elements__container {
     grid-template-columns: repeat(2, 1fr);
     width: 78%;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .elements {
+  .elements__container {
     width: 100%;
     justify-content: center;
     margin: 0 auto 50px;

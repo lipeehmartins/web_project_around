@@ -1,5 +1,5 @@
 .popup__edit-profile,
-.popup__edit-NewPost {
+.popup__edit-newPost {
   display: none;
   position: fixed;
   top: 0;
@@ -14,6 +14,10 @@
 }
 
 .popup__opened {
+  display: flex;
+}
+
+.newPostpopup__opened {
   display: flex;
 }
 
