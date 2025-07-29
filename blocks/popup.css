@@ -1,4 +1,5 @@
-.popup__edit-profile {
+.popup__edit-profile,
+.popup__edit-NewPost {
   display: none;
   position: fixed;
   top: 0;
