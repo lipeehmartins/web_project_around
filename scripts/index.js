@@ -33,6 +33,10 @@ const postbtn = document.querySelector(".post-btn");
 const closeNewPostbtn = document.querySelector(".closeNewPostbtn");
 const form = document.querySelector(".popup__form");
 const newPostForm = document.querySelector(".popup__form_new-post");
+const imagePopup = document.querySelector(".popup__image");
+const closeImageBtn = document.querySelector(".closeImagebtn");
+const popupImage = document.querySelector(".popup__image-content");
+const popupImageTitle = document.querySelector(".popup__image-title");
 
 function togglePopup() {
   let popup = document.querySelector(".popup__edit-profile");
@@ -40,7 +44,6 @@ function togglePopup() {
 }
 
 editbtn.addEventListener("click", togglePopup);
-
 closebtn.addEventListener("click", togglePopup);
 
 function saveChanges(evt) {
@@ -87,6 +90,10 @@ function createCard(name, link) {
   cardImage.alt = `Imagem de ${name}`;
   cardTitle.textContent = name;
 
+  cardImage.addEventListener("click", function () {
+    openImagePopup(link, name);
+  });
+
   likeButton.addEventListener("click", (evt) => {
     evt.target.classList.toggle("elements__like-button_active");
   });
@@ -114,7 +121,22 @@ newPostForm.addEventListener("submit", function (evt) {
   openNewPostPopup();
 });
 
-// Render initial cards
 initialCards.forEach((card) => {
   createCard(card.name, card.link);
 });
+
+function openImagePopup(imageSrc, imageTitle) {
+  popupImage.src = imageSrc;
+  popupImage.alt = imageTitle;
+  popupImageTitle.textContent = imageTitle;
+
+  document.body.style.overflow = "hidden";
+  imagePopup.classList.add("popup__opened");
+}
+
+function closeImagePopup() {
+  imagePopup.classList.remove("popup__opened");
+  document.body.style.overflow = "auto";
+}
+
+closeImageBtn.addEventListener("click", closeImagePopup);

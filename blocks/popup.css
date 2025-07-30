@@ -1,5 +1,6 @@
 .popup__edit-profile,
-.popup__edit-newPost {
+.popup__edit-newPost,
+.popup__image {
   display: none;
   position: fixed;
   top: 0;
@@ -13,18 +14,22 @@
   color: #000000;
 }
 
+.popup__opened,
+.newPostpopup__opened,
 .popup__opened {
   display: flex;
 }
-
-.newPostpopup__opened {
-  display: flex;
+.popup__container {
+  position: relative;
+  padding: 0;
 }
 
-.popup__close-button {
+.closeEditbtn-icon,
+.closeNewPostbtn-icon,
+.closeImagebtn-icon {
   position: absolute;
-  top: 169px;
-  right: 376px;
+  top: -35px;
+  right: -35px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -86,6 +91,30 @@
   opacity: 0.8;
 }
 
+/* Image popup styles */
+.popup__container_image {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+}
+
+.popup__image-content {
+  max-width: 75vw;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+.popup__image-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #ffffff;
+}
+
 @media screen and (max-width: 320px) {
   .popup__edit-profile {
     top: 0;
@@ -94,10 +123,11 @@
     bottom: 0;
   }
 
-  .popup__close-button {
-    width: 26px;
-    height: 26px;
-    top: 155px;
+  .closeEditbtn-icon,
+  .closeNewPostbtn-icon {
+    max-width: 26px;
+    max-width: 26px;
+    top: -31px;
     right: 20px;
   }
 
@@ -119,5 +149,13 @@
   .popup__save-button {
     padding: 14px;
     font-size: 14px;
+  }
+
+  .closeImagebtn-icon {
+    top: -18px;
+    right: -30px;
+    max-width: 30px;
+    max-width: 30px;
+    position: absolute;
   }
 }
