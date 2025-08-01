@@ -93,8 +93,34 @@
 
 @media screen and (max-width: 800px) {
   .elements__container {
-    grid-template-columns: repeat(2, 1fr);
-    width: 78%;
+    max-width: 489px;
+    grid-template-columns: repeat(2, 50%);
+    gap: 5px;
+    margin: 0 auto 48px;
+  }
+
+  .elements__info {
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  /* .elements__item {
+    max-width: 282px;
+  }
+
+  .elements__image {
+    max-height: 180px;
+  }
+
+
+  .elements__title {
+    font-size: 15px;
+  } */
+
+  .elements__like-button {
+    width: 0px;
+    height: 0px;
+    padding: 13px 15px 0px 0px;
   }
 }
 
@@ -104,5 +130,9 @@
     justify-content: center;
     margin: 0 auto 50px;
     grid-template-columns: 1fr;
+  }
+
+  .elements__info {
+    padding: 14px;
   }
 }

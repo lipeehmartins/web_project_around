@@ -101,7 +101,7 @@ function createCard(name, link) {
     evt.target.closest(".elements__item").remove();
   });
 
-  elementsContainer.append(cardElement);
+  elementsContainer.prepend(cardElement);
 }
 
 newPostForm.addEventListener("submit", function (evt) {

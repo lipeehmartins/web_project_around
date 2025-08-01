@@ -9,3 +9,27 @@
   max-width: 173px;
   margin-bottom: 41px;
 }
+
+@media screen and (max-width: 800px) {
+  .header {
+    max-width: 680px;
+    padding-top: 28px;
+  }
+
+  .header__logo {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    padding-top: 28px;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  .header__logo {
+    max-width: 126px;
+    margin-bottom: 32px;
+  }
+}
