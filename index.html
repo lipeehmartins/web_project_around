@@ -118,18 +118,15 @@
                       maxlength="30"
                     />
                     <span class="form__input-error title-input-error"></span>
-                    <input
-                      type="url"
-                      name="Linda da imagem"
-                      id="url-input"
-                      placeholder="Link da imagem"
-                      class="popup__input popup__input_link_imagem url-input_link_imagem form__input"
-                      required
-                    />
+                    <input type="url" name="Linda da imagem" id="url-input"
+                    placeholder="Link da imagem" /* as classes estao ligadas ao
+                    meu JS. Por isso nao tem elas no css pq sao separadas! */
+                    class="popup__input popup__input_link_imagem
+                    url-input_link_imagem form__input" required />
                     <span class="form__input-error url-input-error"></span>
                     <button
                       type="submit"
-                      class="popup__save-button form__submit form__button pop__save-post"
+                      class="popup__save-button form__submit form__button"
                     >
                       Criar
                     </button>
@@ -142,11 +139,11 @@
         <section class="popup">
           <div class="popup__image">
             <div class="popup__container popup__container_image">
-              <button class="popup__close-button closeImagebtn">
+              <button class="popup__close-button closeimagebtn">
                 <img
                   src="./images/Close_Icon.svg"
                   alt="close icon"
-                  class="popup__close-icon closeImagebtn-icon"
+                  class="popup__close-icon closeimagebtn-icon"
                 />
               </button>
               <img src="" alt="" class="popup__image-content" />

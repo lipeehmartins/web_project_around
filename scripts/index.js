@@ -39,7 +39,7 @@ const popupImage = document.querySelector(".popup__image-content");
 const popupImageTitle = document.querySelector(".popup__image-title");
 
 function togglePopup() {
-  let popup = document.querySelector(".popup__edit-profile");
+  const popup = document.querySelector(".popup__edit-profile");
   popup.classList.toggle("popup__opened");
 
   if (!popup.classList.contains("popup__opened")) {
@@ -55,16 +55,11 @@ function saveChanges(evt) {
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__input_name");
   const sobreMimInput = document.querySelector(".popup__input_sobre_mim");
-  let profileName = document.querySelector(".profile__name");
-  let profileDescription = document.querySelector(".profile__description");
+  const profileName = document.querySelector(".profile__name");
+  const profileDescription = document.querySelector(".profile__description");
 
   profileName.textContent = nameInput.value;
   profileDescription.textContent = sobreMimInput.value;
-
-  if (nameInput.value === "" || sobreMimInput.value === "") {
-    alert("Preencha todos os campos!");
-    return;
-  }
 
   togglePopup();
 }
@@ -72,7 +67,7 @@ function saveChanges(evt) {
 form.addEventListener("submit", saveChanges);
 
 function openNewPostPopup() {
-  let popupNewPost = document.querySelector(".popup__edit-newPost");
+  const popupNewPost = document.querySelector(".popup__edit-newPost");
   popupNewPost.classList.toggle("newPostpopup__opened");
 
   if (!popupNewPost.classList.contains("newPostpopup__opened")) {
@@ -95,7 +90,7 @@ function createCard(name, link) {
   const deleteButton = cardElement.querySelector(".elements__delete-button");
 
   cardImage.src = link;
-  cardImage.alt = `Imagem de ${name}`;
+  cardImage.alt = `${name}`;
   cardTitle.textContent = name;
 
   cardImage.addEventListener("click", function () {
@@ -116,11 +111,6 @@ newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__input_local");
   const linkInput = document.querySelector(".popup__input_link_imagem");
-
-  if (nameInput.value === "" || linkInput.value === "") {
-    alert("Preencha todos os campos!");
-    return;
-  }
 
   createCard(nameInput.value, linkInput.value);
 
