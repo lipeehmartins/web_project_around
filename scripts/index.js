@@ -41,6 +41,11 @@ const popupImageTitle = document.querySelector(".popup__image-title");
 function togglePopup() {
   let popup = document.querySelector(".popup__edit-profile");
   popup.classList.toggle("popup__opened");
+
+  if (!popup.classList.contains("popup__opened")) {
+    const formElement = popup.querySelector(".form");
+    resetFormValidation(formElement);
+  }
 }
 
 editbtn.addEventListener("click", togglePopup);
@@ -60,8 +65,6 @@ function saveChanges(evt) {
     alert("Preencha todos os campos!");
     return;
   }
-  nameInput.value = "";
-  sobreMimInput.value = "";
 
   togglePopup();
 }
@@ -71,6 +74,11 @@ form.addEventListener("submit", saveChanges);
 function openNewPostPopup() {
   let popupNewPost = document.querySelector(".popup__edit-newPost");
   popupNewPost.classList.toggle("newPostpopup__opened");
+
+  if (!popupNewPost.classList.contains("newPostpopup__opened")) {
+    const formElement = popupNewPost.querySelector(".form");
+    resetFormValidation(formElement);
+  }
 }
 
 postbtn.addEventListener("click", openNewPostPopup);
@@ -116,8 +124,6 @@ newPostForm.addEventListener("submit", function (evt) {
 
   createCard(nameInput.value, linkInput.value);
 
-  nameInput.value = "";
-  linkInput.value = "";
   openNewPostPopup();
 });
 
@@ -140,3 +146,32 @@ function closeImagePopup() {
 }
 
 closeImageBtn.addEventListener("click", closeImagePopup);
+
+function closePopupOutClick(evt) {
+  if (evt.target.classList.contains("popup__edit-profile")) {
+    togglePopup();
+  } else if (evt.target.classList.contains("popup__edit-newPost")) {
+    openNewPostPopup();
+  } else if (evt.target.classList.contains("popup__image")) {
+    closeImagePopup();
+  }
+}
+
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    const editProfilePopup = document.querySelector(".popup__edit-profile");
+    const newPostPopup = document.querySelector(".popup__edit-newPost");
+    const imagePopup = document.querySelector(".popup__image");
+
+    if (editProfilePopup.classList.contains("popup__opened")) {
+      togglePopup();
+    } else if (newPostPopup.classList.contains("newPostpopup__opened")) {
+      openNewPostPopup();
+    } else if (imagePopup.classList.contains("popup__opened")) {
+      closeImagePopup();
+    }
+  }
+}
+
+document.addEventListener("click", closePopupOutClick);
+document.addEventListener("keydown", closePopupEsc);

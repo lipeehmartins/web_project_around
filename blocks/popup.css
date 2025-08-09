@@ -61,6 +61,12 @@
   margin-bottom: 48px;
 }
 
+.form__set {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 .popup__input {
   border: none;
   border-bottom: 1px solid #cccccc;
@@ -71,6 +77,12 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
+}
+
+.popup__input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #cccccc;
 }
 
 .popup__save-button {
@@ -85,10 +97,46 @@
   font-size: 18px;
   line-height: 100%;
   text-align: center;
+  margin-top: 48px;
 }
 
 .popup__save-button:hover {
   opacity: 0.8;
+}
+
+/* Form validation styles */
+.form__input_type_error {
+  border: none;
+  border-bottom: 1px solid #ff0000;
+}
+
+.form__input_type_error:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ff0000;
+}
+
+.form__input-error {
+  color: #ff0000;
+  font-size: 12px;
+  line-height: 100%;
+  margin-top: 5px;
+  min-height: 12px;
+  display: block;
+}
+
+.form__input-error_active {
+  opacity: 1;
+}
+
+.form__submit-button_inactive {
+  background-color: transparent;
+  color: #b6b6b6;
+  cursor: not-allowed;
+  opacity: 1;
+  border: 1px solid #b6b6b6;
+  border-radius: 2px;
+  transform: rotate(0deg);
 }
 
 /* Image popup styles */

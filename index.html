@@ -55,26 +55,39 @@
               </button>
               <div class="popup__form-container">
                 <h2 class="popup__form-title">Editar perfil</h2>
-                <form class="popup__form">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Nome"
-                    class="popup__input popup__input_name"
-                    required
-                    maxlength="20"
-                  />
-                  <input
-                    type="text"
-                    name="Sobre mim"
-                    placeholder="Sobre mim"
-                    class="popup__input popup__input_sobre_mim"
-                    required
-                    maxlength="15"
-                  />
-                  <button type="submit" class="popup__save-button">
-                    Salvar
-                  </button>
+                <form class="popup__form form" novalidate>
+                  <fieldset class="form__set">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-input"
+                      placeholder="Nome"
+                      class="popup__input popup__input_name form__input"
+                      required
+                      minlength="2"
+                      maxlength="40"
+                    />
+                    <span class="form__input-error name-input-error"></span>
+                    <input
+                      type="text"
+                      name="Sobre mim"
+                      id="sobre-mim-input"
+                      placeholder="Sobre mim"
+                      class="popup__input popup__input_sobre_mim form__input"
+                      required
+                      minlength="2"
+                      maxlength="200"
+                    />
+                    <span
+                      class="form__input-error sobre-mim-input-error"
+                    ></span>
+                    <button
+                      type="submit"
+                      class="popup__save-button form__submit form__button"
+                    >
+                      Salvar
+                    </button>
+                  </fieldset>
                 </form>
               </div>
             </div>
@@ -92,28 +105,35 @@
               </button>
               <div class="popup__form-container">
                 <h2 class="popup__form-title">Novo Local</h2>
-                <form class="popup__form popup__form_new-post">
-                  <input
-                    type="text"
-                    name="Local"
-                    placeholder="Titulo"
-                    class="popup__input popup__input_local"
-                    required
-                    maxlength="20"
-                  />
-                  <input
-                    type="url"
-                    name="Linda da imagem"
-                    placeholder="Link da imagem"
-                    class="popup__input popup__input_link_imagem"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    class="popup__save-button pop__save-post"
-                  >
-                    Criar
-                  </button>
+                <form class="popup__form popup__form_new-post form" novalidate>
+                  <fieldset class="form__set">
+                    <input
+                      type="text"
+                      name="Local"
+                      id="title-input"
+                      placeholder="Titulo"
+                      class="popup__input popup__input_local form__input"
+                      required
+                      minlength="2"
+                      maxlength="30"
+                    />
+                    <span class="form__input-error title-input-error"></span>
+                    <input
+                      type="url"
+                      name="Linda da imagem"
+                      id="url-input"
+                      placeholder="Link da imagem"
+                      class="popup__input popup__input_link_imagem url-input_link_imagem form__input"
+                      required
+                    />
+                    <span class="form__input-error url-input-error"></span>
+                    <button
+                      type="submit"
+                      class="popup__save-button form__submit form__button pop__save-post"
+                    >
+                      Criar
+                    </button>
+                  </fieldset>
                 </form>
               </div>
             </div>
@@ -150,5 +170,6 @@
       </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
