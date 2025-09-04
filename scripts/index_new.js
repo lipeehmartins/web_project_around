@@ -102,17 +102,13 @@ function enableValidation() {
 }
 
 // ===== EVENT LISTENERS =====
-
 editbtn.addEventListener("click", togglePopup);
 closebtn.addEventListener("click", togglePopup);
 form.addEventListener("submit", handleProfileFormSubmit);
-
 postbtn.addEventListener("click", openNewPostPopup);
 closeNewPostbtn.addEventListener("click", openNewPostPopup);
 newPostForm.addEventListener("submit", handleNewCardFormSubmit);
-
 closeImageBtn.addEventListener("click", closeImagePopup);
-
 document.addEventListener("click", closePopupOutClick);
 document.addEventListener("keydown", closePopupEsc);
 

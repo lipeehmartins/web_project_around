@@ -36,8 +36,8 @@ const initialCards = [
   },
 ];
 
-// ===== SELETORES =====
-const elementsContainer = document.querySelector(".elements__container");
+const content = document.querySelector(".content");
+const elementsContainer = content.querySelector(".elements__container");
 const editbtn = document.querySelector(".edit-btn");
 const closebtn = document.querySelector(".popup__close-button");
 const postbtn = document.querySelector(".post-btn");
@@ -46,7 +46,6 @@ const form = document.querySelector(".popup__form");
 const newPostForm = document.querySelector(".popup__form_new-post");
 const closeImageBtn = document.querySelector(".closeimagebtn");
 
-// ===== CONFIGURAÇÃO DA VALIDAÇÃO =====
 const validationConfig = {
   inputSelector: ".form__input",
   submitButtonSelector: ".form__submit",
@@ -55,8 +54,16 @@ const validationConfig = {
   errorClass: "form__input-error_active",
 };
 
-// ===== FUNÇÕES =====
-function handleProfileFormSubmit(evt) {
+const formList = Array.from(document.querySelectorAll(".form"));
+formList.forEach((formElement) => {
+  const validator = new FormValidator(validationConfig, formElement);
+  validator.enableValidation();
+});
+
+editbtn.addEventListener("click", togglePopup);
+closebtn.addEventListener("click", togglePopup);
+
+function saveChanges(evt) {
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__input_name");
   const sobreMimInput = document.querySelector(".popup__input_sobre_mim");
@@ -69,7 +76,12 @@ function handleProfileFormSubmit(evt) {
   togglePopup();
 }
 
-function handleNewCardFormSubmit(evt) {
+form.addEventListener("submit", saveChanges);
+
+postbtn.addEventListener("click", openNewPostPopup);
+closeNewPostbtn.addEventListener("click", openNewPostPopup);
+
+newPostForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__input_local");
   const linkInput = document.querySelector(".popup__input_link_imagem");
@@ -83,38 +95,15 @@ function handleNewCardFormSubmit(evt) {
   elementsContainer.prepend(cardElement);
 
   openNewPostPopup();
-}
+});
 
-function renderInitialCards() {
-  initialCards.forEach((card) => {
-    const newCard = new Card(card, "#elements-template", openImagePopup);
-    const cardElement = newCard.generateCard();
-    elementsContainer.prepend(cardElement);
-  });
-}
-
-function enableValidation() {
-  const formList = Array.from(document.querySelectorAll(".form"));
-  formList.forEach((formElement) => {
-    const validator = new FormValidator(validationConfig, formElement);
-    validator.enableValidation();
-  });
-}
-
-// ===== EVENT LISTENERS =====
-
-editbtn.addEventListener("click", togglePopup);
-closebtn.addEventListener("click", togglePopup);
-form.addEventListener("submit", handleProfileFormSubmit);
-
-postbtn.addEventListener("click", openNewPostPopup);
-closeNewPostbtn.addEventListener("click", openNewPostPopup);
-newPostForm.addEventListener("submit", handleNewCardFormSubmit);
+initialCards.forEach((card) => {
+  const newCard = new Card(card, "#elements-template", openImagePopup);
+  const cardElement = newCard.generateCard();
+  elementsContainer.prepend(cardElement);
+});
 
 closeImageBtn.addEventListener("click", closeImagePopup);
 
 document.addEventListener("click", closePopupOutClick);
 document.addEventListener("keydown", closePopupEsc);
-
-enableValidation();
-renderInitialCards();
