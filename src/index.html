@@ -22,11 +22,8 @@
       <main class="content">
         <section class="profile">
           <div class="profile__photo">
-            <img
-              src="./images/Profile_pic.jpg"
-              alt="Foto de perfil"
-              class="profile__image"
-            />
+            <img src="" alt="Foto de perfil" class="profile__image" />
+            <button class="profile__photo-edit-button"></button>
           </div>
           <div class="profile__info">
             <div class="profile__info-container">
@@ -73,7 +70,7 @@
                       name="description"
                       id="sobre-mim-input"
                       placeholder="Sobre mim"
-                      class="popup__input popup__input_sobre_mim form__input"
+                      class="popup__input popup__input_about_me form__input"
                       required
                       minlength="2"
                       maxlength="200"
@@ -90,6 +87,25 @@
                   </fieldset>
                 </form>
               </div>
+            </div>
+          </div>
+        </section>
+        <section class="popup popup_type_confirm">
+          <div class="popup__container">
+            <button class="popup__close-button">
+              <img
+                src="./images/Close_Icon.svg"
+                alt="close icon"
+                class="popup__close-icon closeEditbtn-icon"
+              />
+            </button>
+            <div class="popup__form-container confirm-container">
+              <h2 class="popup__form-title">Tem certeza?</h2>
+              <form class="popup__form">
+                <button type="submit" class="popup__save-button confirm-delete">
+                  Sim
+                </button>
+              </form>
             </div>
           </div>
         </section>
@@ -148,6 +164,39 @@
               </button>
               <img src="" alt="" class="popup__image-content" />
               <h2 class="popup__image-title"></h2>
+            </div>
+          </div>
+        </section>
+        <section class="popup popup_type_avatar">
+          <div class="popup__container">
+            <button class="popup__close-button">
+              <img
+                src="./images/Close_Icon.svg"
+                alt="close icon"
+                class="popup__close-icon closeEditbtn-icon"
+              />
+            </button>
+            <div class="popup__form-container">
+              <h2 class="popup__form-title">Alterar foto do perfil</h2>
+              <form class="popup__form">
+                <fieldset class="form__set">
+                  <input
+                    type="url"
+                    name="avatar"
+                    id="avatar-input"
+                    placeholder="Link da imagem"
+                    class="popup__input popup__input_avatar form__input"
+                    required
+                  />
+                  <span class="form__input-error avatar-input-error"></span>
+                  <button
+                    type="submit"
+                    class="popup__save-button form__submit form__button"
+                  >
+                    Salvar
+                  </button>
+                </fieldset>
+              </form>
             </div>
           </div>
         </section>

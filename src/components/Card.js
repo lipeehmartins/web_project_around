@@ -1,10 +1,22 @@
 class Card {
-  constructor(data, templateSelector, handleCardClick) {
-    console.log("Card constructor received data:", data);
+  constructor(
+    data,
+    templateSelector,
+    handleCardClick,
+    handleDeleteClick,
+    handleLikeClick,
+    userId
+  ) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
     this._handleCardClick = handleCardClick;
+    this._handleDeleteClick = handleDeleteClick;
+    this._userId = userId;
+    this._id = data._id;
+    this._owner = data.owner;
+    this._onLikeClick = handleLikeClick;
+    this._isLiked = data.isLiked;
   }
 
   _getTemplate() {
@@ -33,23 +45,41 @@ class Card {
     });
     likeButton.addEventListener("click", (evt) => this._handleLikeClick(evt));
     deleteButton.addEventListener("click", () =>
-      this._handleDeleteClick(cardElement)
+      this._handleDeleteClick(this._id)
     );
   }
 
-  _handleLikeClick(evt) {
-    evt.target.classList.toggle("elements__like-button_active");
+  _handleLikeClick() {
+    this._onLikeClick(this._id, this._isLiked);
   }
 
-  _handleDeleteClick(cardElement) {
-    cardElement.remove();
+  updateLikeState(isLiked) {
+    this._isLiked = isLiked;
+    const likeButton = this._element.querySelector(".elements__like-button");
+    if (isLiked) {
+      likeButton.classList.add("elements__like-button_active");
+    } else {
+      likeButton.classList.remove("elements__like-button_active");
+    }
   }
 
   generateCard() {
-    const cardElement = this._getTemplate();
-    this._fillCardInfo(cardElement);
-    this._setEventListeners(cardElement);
-    return cardElement;
+    this._element = this._getTemplate();
+    this._fillCardInfo(this._element);
+    this._setEventListeners(this._element);
+    // Verifica se o cartão pertence ao usuário atual
+    const ownerId =
+      this._owner && this._owner._id ? this._owner._id : this._owner;
+    if (ownerId !== this._userId) {
+      this._element.querySelector(".elements__delete").style.display = "none";
+    }
+    this.updateLikeState(this._isLiked);
+    return this._element;
+  }
+
+  deleteCard() {
+    this._element.remove();
+    this._element = null;
   }
 }
 

@@ -83,6 +83,39 @@
   opacity: 0.6;
 }
 
+.profile__photo {
+  position: relative;
+}
+
+.profile__image {
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.profile__photo-edit-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url("../images/edit_btn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 26px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.profile__photo:hover .profile__photo-edit-button {
+  opacity: 1;
+  pointer-events: all;
+}
+
 @media screen and (max-width: 800px) {
   .profile {
     margin: 0 auto 36px;
